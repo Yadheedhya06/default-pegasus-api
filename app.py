@@ -7,7 +7,8 @@ def init():
     global model
     
     device = 0 if torch.cuda.is_available() else -1
-    model = pipeline('fill-mask', model='bert-base-uncased', device=device)
+    model = pipeline('summarization', model="braindao/Flan-T5", framework='pt',
+                     device=device, use_auth_token='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')
 
 # Inference is ran for every server call
 # Reference your preloaded global model variable here.
@@ -23,4 +24,4 @@ def inference(model_inputs:dict) -> dict:
     result = model(prompt)
 
     # Return the results as a dictionary
-    return result
+    return 
