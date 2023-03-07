@@ -7,8 +7,8 @@ def init():
     global model
     
     device = 0 if torch.cuda.is_available() else -1
-    model = pipeline(model="google/flan-ul2",
-                     device=device, use_auth_token='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')
+    model = pipeline(model="google/pegasus-cnn_dailymail",
+                     device=device)
 
 # Inference is ran for every server call
 # Reference your preloaded global model variable here.
