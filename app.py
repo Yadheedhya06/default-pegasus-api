@@ -7,7 +7,7 @@ def init():
     global model
     
     device = 0 if torch.cuda.is_available() else -1
-    model = pipeline(model="google/pegasus-cnn_dailymail",
+    model = pipeline('summarization', model="google/pegasus-cnn_dailymail",
                      device=device)
 
 # Inference is ran for every server call
