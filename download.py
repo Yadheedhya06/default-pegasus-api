@@ -4,10 +4,14 @@
 # In this example: A Huggingface BERT model
 
 from transformers import pipeline
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+tokenizer = AutoTokenizer.from_pretrained("google/pegasus-cnn_dailymail")
+model = AutoModelForSeq2SeqLM.from_pretrained("google/pegasus-cnn_dailymail")
 
 def download_model():
     # do a dry run of loading the huggingface model, which will download weights
-    pipeline(model="google/pegasus-cnn_dailymail")
+    pipeline(model=model)
 
 if __name__ == "__main__":
     download_model()
