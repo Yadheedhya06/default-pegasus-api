@@ -6,8 +6,8 @@
 from transformers import pipeline
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-tokenizer = AutoTokenizer.from_pretrained("google/pegasus-cnn_dailymail")
-model = AutoModelForSeq2SeqLM.from_pretrained("google/pegasus-cnn_dailymail")
+tokenizer = AutoTokenizer.from_pretrained("BrainStormersHakton/question-gen-T5-base")
+model = AutoModelForSeq2SeqLM.from_pretrained("BrainStormersHakton/question-gen-T5-base")
 
 def download_model():
     # do a dry run of loading the huggingface model, which will download weights
