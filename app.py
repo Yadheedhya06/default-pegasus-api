@@ -7,9 +7,7 @@ def init():
     global model
     
     device = 0 if torch.cuda.is_available() else -1
-    model = pipeline(model="BrainStormersHakton/question-gen-T5-base",
-                     device=device)
-
+    model = AutoModelForSeq2SeqLM.from_pretrained("BrainStormersHakton/question-gen-T5-base", device = device)
 # Inference is ran for every server call
 # Reference your preloaded global model variable here.
 def inference(model_inputs:dict) -> dict:
