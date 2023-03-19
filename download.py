@@ -11,7 +11,7 @@ model = AutoModelForSeq2SeqLM.from_pretrained("BrainStormersHakton/question-gen-
 
 def download_model():
     # do a dry run of loading the huggingface model, which will download weights
-    pipeline(model=model)
+    pipeline(model="BrainStormersHakton/question-gen-T5-base")
 
 if __name__ == "__main__":
     download_model()
